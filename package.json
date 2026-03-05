@@ -1,0 +1,62 @@
+{
+  "name": "portslayer",
+  "version": "0.1.0",
+  "description": "Cross-platform CLI to inspect and kill processes by port on Windows, macOS, and Linux.",
+  "type": "module",
+  "bin": {
+    "portslayer": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "cli",
+    "port",
+    "kill-port",
+    "network",
+    "devtools",
+    "cross-platform"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^5.5.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "execa": "^9.2.0",
+    "ora": "^8.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "np": "^10.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.4.0"
+  },
+  "np": {
+    "yarn": false,
+    "contents": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/portslayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/portslayer/issues"
+  },
+  "homepage": "https://github.com/your-username/portslayer#readme"
+}
