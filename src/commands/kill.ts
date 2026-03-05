@@ -4,6 +4,7 @@ import type { NativePortService } from "../services/port-service.js";
 import type { CliContext, KillAttemptResult, PortProcessInfo } from "../types.js";
 import { chooseProcesses, confirmKillAction, promptForPort } from "../ui/interactive.js";
 import { createSpinner, createStyler, printJson, renderProcessTable } from "../ui/output.js";
+import { buildForceRetryHint } from "../utils/kill-hints.js";
 import { parsePortInput } from "../utils/port.js";
 
 interface KillCommandOptions {
@@ -143,6 +144,7 @@ export async function runKillCommand(
 
   const succeeded = results.filter((result) => result.success);
   const failed = results.filter((result) => !result.success);
+  const retryWithForceCommand = buildForceRetryHint(failed, port, Boolean(options.force));
 
   if (context.json) {
     printJson({
@@ -150,7 +152,8 @@ export async function runKillCommand(
       port,
       attempted: results.length,
       killed: succeeded,
-      failed
+      failed,
+      ...(retryWithForceCommand ? { hint: `Try: ${retryWithForceCommand}` } : {})
     });
   } else {
     process.stdout.write(`${styles.cyanBright(`Port ${port} termination summary`)}\n`);
@@ -162,6 +165,9 @@ export async function runKillCommand(
         const status = result.success ? styles.green("OK") : styles.red("FAIL");
         process.stdout.write(`${status} pid:${result.pid} ${result.message}\n`);
       }
+    }
+    if (retryWithForceCommand) {
+      process.stdout.write(`${styles.yellow(`Try: ${retryWithForceCommand}`)}\n`);
     }
   }
 
