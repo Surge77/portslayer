@@ -1,6 +1,6 @@
 {
   "name": "portslayer-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cross-platform CLI to inspect and kill processes by port on Windows, macOS, and Linux.",
   "type": "module",
   "main": "dist/cli.js",
