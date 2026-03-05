@@ -1,8 +1,9 @@
 {
-  "name": "portslayer",
-  "version": "0.1.0",
+  "name": "portslayer-cli",
+  "version": "1.0.0",
   "description": "Cross-platform CLI to inspect and kill processes by port on Windows, macOS, and Linux.",
   "type": "module",
+  "main": "dist/cli.js",
   "bin": {
     "portslayer": "dist/cli.js"
   },
@@ -17,6 +18,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -30,7 +32,7 @@
     "devtools",
     "cross-platform"
   ],
-  "author": "",
+  "author": "Surge77",
   "license": "MIT",
   "dependencies": {
     "@inquirer/prompts": "^5.5.0",
@@ -41,7 +43,11 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@eslint/js": "^9.16.0",
     "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "eslint": "^9.16.0",
     "np": "^10.0.0",
     "tsup": "^8.0.0",
     "typescript": "^5.4.0",
@@ -53,10 +59,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/portslayer.git"
+    "url": "git+https://github.com/Surge77/portslayer.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/portslayer/issues"
+    "url": "https://github.com/Surge77/portslayer/issues"
   },
-  "homepage": "https://github.com/your-username/portslayer#readme"
+  "homepage": "https://github.com/Surge77/portslayer#readme"
 }

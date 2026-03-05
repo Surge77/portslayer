@@ -12,7 +12,7 @@ Cross-platform CLI to inspect and kill processes by port on Windows, macOS, and 
 ## Install
 
 ```bash
-npm install -g portslayer
+npm install -g portslayer-cli
 ```
 
 ## Quick Usage
