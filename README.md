@@ -1,21 +1,35 @@
-# portslayer
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Surge77/portslayer/main/assets/portslayer-logo.svg" alt="Portslayer logo" width="720" />
+</p>
+
+<p align="center">
+  <strong>Cross-platform CLI to inspect and kill processes by port</strong>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/portslayer-cli"><img alt="npm version" src="https://img.shields.io/npm/v/portslayer-cli?color=16a34a&label=npm"></a>
+  <a href="https://www.npmjs.com/package/portslayer-cli"><img alt="downloads" src="https://img.shields.io/npm/dm/portslayer-cli?color=0ea5e9"></a>
+  <img alt="platforms" src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-64748b">
+</p>
+
+# Portslayer
 
 Cross-platform CLI to inspect and kill processes by port on Windows, macOS, and Linux.
 
-## Why portslayer?
+## ⚡ Why Portslayer?
 
 - Works across all major desktop/server OSes.
 - Interactive by default when run in a terminal.
 - Script-friendly with flags and JSON output.
 - Gives clear kill summaries and useful failure messages.
 
-## Install
+## 📦 Install
 
 ```bash
 npm install -g portslayer-cli
 ```
 
-## Quick Usage
+## 🚀 Quick Usage
 
 ```bash
 portslayer list
@@ -23,7 +37,7 @@ portslayer check 3000
 portslayer kill 3000
 ```
 
-## Commands
+## 🧰 Commands
 
 ### `portslayer list`
 
@@ -60,7 +74,7 @@ Flags:
 - `--yes` skip confirmation prompt
 - `--json` machine-readable output
 
-## Examples
+## 🧪 Examples
 
 ```bash
 # Interactive kill flow
@@ -76,7 +90,7 @@ portslayer check 8080 --json
 portslayer kill 3000 --dry-run
 ```
 
-## Local Development
+## 🛠️ Local Development
 
 ```bash
 npm install
@@ -91,7 +105,7 @@ Run compiled CLI:
 node dist/cli.js list
 ```
 
-## Publish To npm
+## 📤 Publish to npm
 
 1. Update `package.json` metadata fields (`repository`, `bugs`, `homepage`, `author`).
 2. Login to npm:
@@ -109,7 +123,15 @@ Optional release automation with `np`:
 npx np
 ```
 
-## Troubleshooting
+## 🤝 Contributing
+
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening PRs.
+
+## 🔐 Security
+
+Please read [SECURITY.md](./SECURITY.md) for vulnerability reporting.
+
+## 🆘 Troubleshooting
 
 - Linux/macOS: if process metadata is missing, run with higher permissions.
 - Linux: if `lsof` is unavailable, install it or ensure `ss` is present.
